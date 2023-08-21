@@ -40,7 +40,7 @@ VALIDATE $? "Enabling the Service"
 systemctl start mongod &>> $LOGFILE
 VALIDATE $? "Starting the Service"
 
-sed -i 's/127.0.0.1/0.0.0.0' /etc/mongod.conf &>> $LOGFILE
+sed -i 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf &>> $LOGFILE
 VALIDATE $? "Editing the Config file"
 
 systemctl restart mongod &>> $LOGFILE
