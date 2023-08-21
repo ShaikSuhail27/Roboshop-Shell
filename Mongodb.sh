@@ -5,7 +5,7 @@
 USERID=$(id -u)
 LOGDIR=/tmp
 SCRIPTNAME=$0
-DATE=$(date + %F)
+DATE=$(date +%F)
 LOGFILE=$LOGDIR/$SCRIPTNAME-$DATE.log
 R="\e[31m"
 G="\e[32m"
@@ -22,9 +22,9 @@ fi
 VALIDATE() {
 if [ $1 -ne 0 ];
 then
-echo "$2 is $R Failure"
+echo -e "$2 is $R Failure"
 else
-echo "$2 is $G Success"
+echo -e "$2 is $G Success"
 fi
 }
 
