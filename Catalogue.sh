@@ -70,7 +70,7 @@ VALIDATE $? "Installing the Node JS dependencies"
 cp /home/centos/Roboshop-Shell/Catalogue.service /etc/systemd/system/catalogue.service &>> $LOGFILE
 VALIDATE $? "Configuring the service file"
 
-systemctl daemon -reload &>> $LOGFILE
+systemctl daemon-reload &>> $LOGFILE
 VALIDATE $? "Reloading the Service"
 
 systemctl enable catalogue &>> $LOGFILE
