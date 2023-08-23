@@ -47,13 +47,13 @@ else
 echo "$USER user already exists" &>> $LOGFILE 
 fi
 
-# if [ -d "$DIR_NAME" ];
-# then
-# echo "Directory already exists" &>> $LOGFILE 
-# else
+if [ -d "$DIR_NAME" ];
+then
+echo "Directory already exists" &>> $LOGFILE 
+else
 mkdir /app &>> $LOGFILE
-VALIDATE $? "Creating the App directory"
-#fi
+#VALIDATE $? "Creating the App directory"
+fi
 
 curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip &>> $LOGFILE
 VALIDATE $? "Downloading the Catalogue Package"
