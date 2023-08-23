@@ -14,7 +14,7 @@ DIR_NAME="/app"
 
 # Function for Success and failure
 VALIDATE() {
-if[ $1 -ne 0 ];
+if [ $1 -ne 0 ]
 then
 echo "$2 is $R Failure $N"
 exit 1
