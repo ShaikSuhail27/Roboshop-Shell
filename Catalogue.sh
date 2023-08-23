@@ -38,14 +38,14 @@ VALIDATE $? "Installing the Node environment"
 yum install nodejs -y &>> $LOGFILE
 VALIDATE $? "Installing the Node JS"
 
-# id $USER
-# if [ $? -ne 0 ];
-# then
+ id $USER > /dev/null 2>&1
+ if [ $? -ne 0 ];
+ then
 useradd roboshop &>> $LOGFILE 
-VALIDATE $? "Adding the user"
-# else
-# echo "$USER user already exists" &>> $LOGFILE 
-# fi
+#VALIDATE $? "Adding the user"
+else
+echo "$USER user already exists" &>> $LOGFILE 
+fi
 
 # if [ -d "$DIR_NAME" ];
 # then
