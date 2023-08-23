@@ -77,7 +77,7 @@ VALIDATE $? "Enabling the Service"
 systemctl start catalogue &>> $LOGFILE
 VALIDATE $? "Starting the Service"
 
-cp /home/centos/Roboshop-Shell/Mongod.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
+cp /home/centos/Roboshop-Shell/Mongod.repo  /etc/yum.repos.d/mongo.repo &>> $LOGFILE
 VALIDATE $? "Creating the mongo repo file for MONGODB client"
 
 yum install mongodb-org-shell -y &>> $LOGFILE
