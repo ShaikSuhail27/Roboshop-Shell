@@ -75,10 +75,10 @@ VALIDATE $? "Configuring the service file"
 systemctl daemon-reload &>> $LOGFILE
 VALIDATE $? "Reloading the Service"
 
-systemctl enable catalogue &>> $LOGFILE
+systemctl enable user &>> $LOGFILE
 VALIDATE $? "Enabling the Service"
 
-systemctl start catalogue &>> $LOGFILE
+systemctl start user &>> $LOGFILE
 VALIDATE $? "Starting the Service"
 
 cp /home/centos/Roboshop-Shell/mongo.repo  /etc/yum.repos.d/mongo.repo &>> $LOGFILE
