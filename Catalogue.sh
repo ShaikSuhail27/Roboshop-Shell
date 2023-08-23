@@ -41,8 +41,9 @@ VALIDATE $? "Installing the Node JS"
  id $USER > /dev/null 2>&1
  if [ $? -ne 0 ];
  then
+echo -e "$Y Adding the user $N"
 useradd roboshop &>> $LOGFILE 
-VALIDATE $? "Adding the user"
+#VALIDATE $? "Adding the user"
 else
 echo "$Y $USER user already exists $N" &>> $LOGFILE 
 fi
@@ -51,8 +52,9 @@ if [ -d "$DIR_NAME" ];
 then
 echo -e "$Y Directory already exists $N" &>> $LOGFILE 
 else
+echo -e "$Y Creating the App directory $N"
 mkdir /app &>> $LOGFILE
-VALIDATE $? " Creating the App directory"
+#VALIDATE $? " Creating the App directory"
 fi
 
 curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip &>> $LOGFILE
