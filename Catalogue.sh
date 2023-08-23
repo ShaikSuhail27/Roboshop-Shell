@@ -26,7 +26,7 @@ fi
 # To find whether it is root access or not
 if [ $USERID -ne 0 ];
 then
-echo "$R ERROR: Please install with root access $N"
+echo -e "$R ERROR: Please install with root access $N"
 exit 1
 fi
 
@@ -77,7 +77,7 @@ VALIDATE $? "Enabling the Service"
 systemctl start catalogue &>> $LOGFILE
 VALIDATE $? "Starting the Service"
 
-cp /home/centos/Roboshop-Shell/Mongod.repo  /etc/yum.repos.d/mongo.repo &>> $LOGFILE
+cp /home/centos/Roboshop-Shell/mongo.repo  /etc/yum.repos.d/mongo.repo &>> $LOGFILE
 VALIDATE $? "Creating the mongo repo file for MONGODB client"
 
 yum install mongodb-org-shell -y &>> $LOGFILE

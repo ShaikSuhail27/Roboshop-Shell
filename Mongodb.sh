@@ -30,7 +30,7 @@ echo -e "$2 is $G Success $N"
 fi
 }
 
-cp Mongod.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
+cp mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
 VALIDATE $? "copied to Mongo repo"
 
 yum install mongodb-org -y &>> $LOGFILE
