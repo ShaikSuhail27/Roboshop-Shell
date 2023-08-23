@@ -5,10 +5,10 @@ LOGDIR=/tmp
 SCRIPTNAME=$0
 DATE=$(date +%F-%H:%M:%S)
 LOGFILE=$LOGDIR/$SCRIPTNAME-$DATE.log
-R="e\[31m"
-G="e\[32m"
-Y="e\[33m"
-N="e\[0m"
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 USER="roboshop"
 DIR_NAME="/app"
 
@@ -38,20 +38,22 @@ VALIDATE $? "Installing the Node environment"
 yum install nodejs -y &>> $LOGFILE
 VALIDATE $? "Installing the Node JS"
 
-id $USER
-if [ $? -ne 0 ];
-then
+# id $USER
+# if [ $? -ne 0 ];
+# then
 useradd roboshop &>> $LOGFILE 
-else
-echo "$USER user already exists" &>> $LOGFILE 
-fi
+VALIDATE $? "Adding the user"
+# else
+# echo "$USER user already exists" &>> $LOGFILE 
+# fi
 
-if [ -d "$DIR_NAME" ];
-then
-echo "Directory already exists" &>> $LOGFILE 
-else
+# if [ -d "$DIR_NAME" ];
+# then
+# echo "Directory already exists" &>> $LOGFILE 
+# else
 mkdir /app &>> $LOGFILE
-fi
+VALIDATE $? "Creating the App directory"
+#fi
 
 curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip &>> $LOGFILE
 VALIDATE $? "Downloading the Catalogue Package"
