@@ -51,14 +51,14 @@ if [ -d "$DIR_NAME" ];
 then
 echo "Directory already exists" &>> $LOGFILE 
 else
-mkdir /app1 &>> $LOGFILE
+mkdir /app &>> $LOGFILE
 #VALIDATE $? "Creating the App directory"
 fi
 
 curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip &>> $LOGFILE
 VALIDATE $? "Downloading the Catalogue Package"
 
-cd /app1 &>> $LOGFILE
+cd /app &>> $LOGFILE
 VALIDATE $? "Moving to the app directory"
 
 unzip -o /tmp/catalogue.zip &>> $LOGFILE
