@@ -39,7 +39,7 @@ VALIDATE $? "Enabling the 6.2 Version"
 yum install redis -y  &>> $LOGFILE
 VALIDATE $? "Installing the REDIS"
 
-sed -i 's/127.0.0.1/0.0.0.0/g' /etc/redis.conf  &>> $LOGFILE
+sed -i 's/127.0.0.1/0.0.0.0/' /etc/redis.conf  &>> $LOGFILE
 VALIDATE $? "Modifying the port in the config file"
 
 systemctl enable redis  &>> $LOGFILE
