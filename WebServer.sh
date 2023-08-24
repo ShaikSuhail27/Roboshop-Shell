@@ -42,13 +42,15 @@ VALIDATE $? "Starting the Nginx Service"
 rm -rf /usr/share/nginx/html/* &>> $LOGFILE
 VALIDATE $? "Removing the HTML Content"
 
-curl -o /tmp/web.zip https://roboshop-builds.s3.amazonaws.com/web.zip &>> $LOGFILE
+#curl -o /tmp/web.zip https://roboshop-builds.s3.amazonaws.com/web.zip &>> $LOGFILE
+curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip &>> $LOGFILE
 VALIDATE $? "downloading the web package"
 
 cd /usr/share/nginx/html &>> $LOGFILE
 VALIDATE $? "Moving to the HTML directory"
 
-unzip /tmp/web.zip &>> $LOGFILE
+#unzip /tmp/web.zip &>> $LOGFILE
+unzip /tmp/frontend.zip &>> $LOGFILE
 VALIDATE $? "Extracting the WEB zip file"
 
 cp /home/centos/Roboshop-Shell/Roboshop.conf /etc/nginx/default.d/roboshop.conf &>> $LOGFILE
