@@ -8,7 +8,7 @@ SECURITY_GID="sg-05fe3b7791764948d"
 for i in "${SERVER_NAMES[@]}"
 do
 # if  it is Mongodb or Mysql then need to create t3.medium or else t2.micro
-if [[$i =="MongoDB" || $i =="MYSQL"]];
+if [[ $i =="MongoDB" || $i =="MYSQL" ]];
 then
 INSTANCE_TYPE="t3.medium"
 else
