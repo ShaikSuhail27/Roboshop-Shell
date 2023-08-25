@@ -2,8 +2,8 @@
 
 SERVER_NAMES=("MongoDB" "Redis" "MYSQL" "RabbitMQ" "Catalogue" "User" "Cart" "Shipping" "Payment" "dispatch" "Web")
 INSTANCE_TYPE=""
-IMAGE_ID="ami-03265a0778a880afb"
-SECURITY_GID="sg-05fe3b7791764948d"
+IMAGE_ID=ami-03265a0778a880afb
+SECURITY_GID=sg-05fe3b7791764948d
 
 for i in "${SERVER_NAMES[@]}"
 do
