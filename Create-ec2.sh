@@ -4,5 +4,5 @@ SERVER_NAMES=("MongoDB","Redis","MYSQL","RabbitMQ","Catalogue","User","Cart","Sh
 
 for i in "${SERVER_NAMES[@]}"
 do
-echo Name:$i
+echo "Name:$i"
 done
